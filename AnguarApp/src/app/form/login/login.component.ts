@@ -9,7 +9,10 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  onClick() {
+    console.log('button was clicked');
+  }
+  
 }
