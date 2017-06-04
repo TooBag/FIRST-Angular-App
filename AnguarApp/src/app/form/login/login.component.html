@@ -1,5 +1,7 @@
 <div>
-      <input #usernameRef type="text">
-      <input #passwordRef type="password">
-      <button (click)="onClick(usernameRef.value, passwordRef.value)">Login</button>
+      <input required type="text" [(ngModel)]="username" #usernameRef="ngModel"/>
+        {{usernameRef.valid}}
+      <input required type="password" [(ngModel)]="password" #passwordRef="ngModel"/>
+        {{passwordRef.valid}}
+      <button (click)="onClick()">Login</button>
 </div>

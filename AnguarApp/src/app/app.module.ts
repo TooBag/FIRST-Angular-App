@@ -9,6 +9,7 @@ import { LoginComponent } from './form/login/login.component';
 
 //Services
 import { AuthService } from './core/auth/auth.service';
+import { UserService } from './core/user/user.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthService } from './core/auth/auth.service';
     HttpModule
   ],
   providers: [
-    { provide: 'auth',  useClass: AuthService }
+    { provide: 'auth',  useClass: AuthService },
+    { provide: 'user', useClass: UserService }
   ],
   bootstrap: [AppComponent]
 })
