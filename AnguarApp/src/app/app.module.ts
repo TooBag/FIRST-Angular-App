@@ -3,8 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+//Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './form/login/login.component';
+
+//Services
+import { AuthService } from './core/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { LoginComponent } from './form/login/login.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'auth',  useClass: AuthService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

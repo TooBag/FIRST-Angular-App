@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
-import { AuthService } from '../../core/auth.service';
+import { AuthService } from '../../core/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  service: AuthService;
 
-  constructor() {
-    this.service = new AuthService();
-   }
+export class LoginComponent implements OnInit {
+
+  constructor(@Inject('auth') private service) { }
 
   ngOnInit() { }
 
