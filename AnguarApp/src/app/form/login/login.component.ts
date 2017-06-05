@@ -22,4 +22,7 @@ export class LoginComponent implements OnInit {
     this.service.loginWithCredentials(this.username, this.password));
   }
   
+  onSubmit(formValue) {
+    console.log(formValue);
+  }
 }
