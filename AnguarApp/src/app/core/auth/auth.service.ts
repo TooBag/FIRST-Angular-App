@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-
+ 
   constructor() { }
 
-  loginWithCredentials(username: string, password: string): boolean {
-    if(username === 'istoobag')
+  public static loginWithCredentials(username: string, password: string): boolean {
+    if(username == 'istoobag' && password == '123456')
       return true;
     return false;
   }

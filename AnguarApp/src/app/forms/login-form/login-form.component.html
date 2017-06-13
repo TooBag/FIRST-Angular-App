@@ -1,0 +1,29 @@
+<div id="root">
+  <form #formRef="ngForm" (ngSubmit)="submit(formRef.value)">
+    <div>
+      <h2>Login</h2>
+    </div>
+    <fieldset ngModelGroup="login">
+    <div>
+      <md-input-container>
+        <input mdInput type="text" value="" placeholder="User Name"
+        color="primary"
+        required minlength="1"
+        name="username" [(ngModel)]="username"  #usernameRef="ngModel" />
+      </md-input-container>
+    </div>
+    <div>
+      <md-input-container>
+        <input mdInput type="password" value="" placeholder="Password" 
+        color="primary"
+        required minlength="6"
+        name="password" [(ngModel)]="password"  #passwordRef="ngModel" />
+        <span color="accent" *ngIf="passwordRef.errors?.minlength">At least 6 charactors</span>
+      </md-input-container>
+    </div>
+    </fieldset>
+    <div>
+      <button md-button color="primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

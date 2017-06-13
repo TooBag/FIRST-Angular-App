@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~https://fonts.googleapis.com/icon?family=Roboto';
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.relative-horizontal 
+{
+    width: 100%;
+}
+
+body
+{
+    font-family: Roboto;
+}
+
+/*html
+{ 
+  background: black;
+  color: lightskyblue;
+}*/
+
+/*div
+{
+    border: 0px solid lightskyblue;
+}
+
+fieldset
+{
+    border: 0px solid lightskyblue;
+}
+
+button {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}*/
