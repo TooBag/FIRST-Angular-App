@@ -15,17 +15,19 @@ import { MdInputModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdTooltipModule } from '@angular/material';
 
-//Components
-import { AppComponent } from './app.component';
-
 //Services
 import { AuthService } from './core/auth/auth.service';
+
+//Components
+import { AppComponent } from './app.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { LoginDialogComponent } from './dialogs/login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { LoginFormComponent } from './forms/login-form/login-form.component';
     MdTooltipModule
   ],
   entryComponents: [
+    LoginDialogComponent
   ],
   providers: [
     { provide: 'auth',  useClass: AuthService }
