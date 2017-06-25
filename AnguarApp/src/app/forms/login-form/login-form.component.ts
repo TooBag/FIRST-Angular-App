@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Inject } from '@angular/core';
 
-import { MdDialog } from '@angular/material';
+import {MdDialog, MdDialogRef} from '@angular/material';
 
 import { AuthService } from '../../core/auth/auth.service';
 
@@ -20,17 +20,19 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() { }
   
   private submit (formValue) {
-    var sucess : boolean = AuthService.loginWithCredentials(formValue.login.username, formValue.login.password);
+    var success : boolean = AuthService.loginWithCredentials(formValue.login.username, formValue.login.password);
 
     console.log('username:' + formValue.login.username + "\n\r" + "password:" + formValue.login.password);
-    console.log('auth result is: ' + sucess);
+    console.log('auth result is: ' + success);
 
-    if (sucess) {
-      this.openDialog();
+    if (success) {
+      this.openDialog(formValue.login.username);
     }
   }
 
-  private openDialog() {
-    this.dialog.open(LoginDialogComponent);
+  private openDialog(username : string) {
+    let dialogRef = this.dialog.open(LoginDialogComponent);
+    
+    dialogRef.componentInstance.username = username;
   }
 }

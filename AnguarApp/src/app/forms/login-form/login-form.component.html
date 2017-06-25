@@ -1,7 +1,7 @@
 <div id="root">
-  <form #formRef="ngForm" (ngSubmit)="submit(formRef.value)">
+  <form #formRef="ngForm" (ngSubmit)="submit(formRef.value)" >
     <div>
-      <h2>Login</h2>
+      <h2>Please Login</h2>
     </div>
     <fieldset ngModelGroup="login">
     <div>
@@ -23,7 +23,9 @@
     </div>
     </fieldset>
     <div>
-      <button md-raised-button color="primary" type="submit">Submit</button>
+      <button md-raised-button color="primary" type="submit" [disabled]='!formRef.valid'>
+        Submit
+      </button>
     </div>
   </form>
 </div>
